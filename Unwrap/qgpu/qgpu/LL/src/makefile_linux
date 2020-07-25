@@ -1,0 +1,24 @@
+IDIR =../include
+CC=gcc
+CFLAGS=-lm -I$(IDIR)
+
+ODIR=obj
+LDIR =../lib
+
+_DEPS = file.h pi.h util.h getqual.h qualgrad.h qualpseu.h qualvar.h dxdygrad.h grad.h extract.h maskfat.h quality.h list.h message.h
+DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
+
+_OBJ = main.o util.o getqual.o qualgrad.o qualpseu.o qualvar.o dxdygrad.o grad.o extract.o maskfat.o quality.o list.o
+OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
+
+
+$(ODIR)/%.o: %.c $(DEPS)
+	$(CC) -c -o $@ $< $(CFLAGS)
+
+main: $(OBJ)
+	gcc -o $@ $^ $(CFLAGS)
+
+.PHONY: clean
+
+clean:
+	rm -f $(ODIR)/*.o *~ core $(INCDIR)/*~ 

@@ -1,0 +1,35 @@
+lists=['hualei','guwei','wangyumo','shenjinrong']
+print("I want to invent "+lists[0]+" to have a dinner with me.")
+print(lists[1].title()+" is my roommate.")
+print(lists[2].title()+" is a man who playing game very well.")
+untended='hualei'
+lists.remove(untended)
+print(lists)
+print(untended.title()+" is too busy to take part in our meeting.")
+lists.append('yanyue')
+print(lists)
+print("I will invent "+lists[0]+" and "+lists[2]+" to take part in our meeting.")
+print(lists[1].title()+" and "+lists[3].title()+" will be invented to join us.")
+message="I want to order a bigger meeting room in order to accommodate more people."
+lists.insert(2,'luyucheng')
+lists.insert(0,'wangyun')
+lists.append('lilong')
+print(message)
+print(lists)
+print("I can invent two people to take part in my party.")
+prevent=lists.pop(6)
+print("I am so sorry "+prevent.title()+" because I can not invent you to take part in my party.")
+prevent=lists.pop(4)
+print("I will invent "+prevent.title()+" to jion us next time.")
+prevent=lists.pop(2)
+print("Show my best respect for you "+prevent.title()+" see you next time.")
+prevent=lists.pop(0)
+print("I fell so sorry "+prevent.title()+" I will invent next time.")
+prevent=lists.pop(1)
+print("Please remember "+prevent.title()+" you must by my best friend,I will invent you next week.")
+print(lists)
+print("Thank you for you attention "+lists[0].title()+" and "+lists[-1].title()+" it is my pleasure.")
+del lists[0]
+del lists[-1]
+print(lists)
+
